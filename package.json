@@ -1,0 +1,24 @@
+{
+  "name": "birth_day_website",
+  "version": "1.0.0",
+  "description": "Website project for CSS and HTML practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zevs108/birth_day_website.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Ilya Yevseienkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zevs108/birth_day_website/issues"
+  },
+  "homepage": "https://github.com/Zevs108/birth_day_website#readme"
+}
