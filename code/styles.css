@@ -6,32 +6,28 @@
 
 html{
     color: #23270d;
-    font-size: 18pt;
+    font-size: 20pt;
 }
 
-section {
+
+section:nth-child(1) {
     height: 90vh;
-    padding: 10px;
 
-    background-color: grey;
-    background-clip: content-box;
-
-    align-content: center;
-}
-
-section > .container {
-    width: 100%;
-    height: 100%;
+    background-image: url("../public/hero.png");
+    background-size: cover;
+    background-clip: border;
 
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
 
+    overflow: scroll;
+
     & > button{
-        min-height: 2em;
-        max-width: 14em;
+        min-height: 2.5em;
+        max-width: 12em;
         width: 100%;
         margin-bottom: 2%;
 
@@ -46,11 +42,96 @@ section > .container {
         font-size: 6rem;
         font-weight: 500;
     }
+}
 
-    & h1.italic{
-        font-style: italic;
+section:nth-child(2){
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(#f1f1eb, 90%, #e6ff6d);
 
-        position: relative;
-        bottom: 5%;
+    & img{
+        width: 45%;
+        margin: 10vh 20px;
+        aspect-ratio: 1189 / 1149;
+        object-fit: cover;
+
+        border-radius: 20px;
+    }
+}
+
+section:nth-child(3){
+    height: 80vh;
+    background-image: linear-gradient(to top, #efefe7, 80%, #e6ff6d);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    & div{
+        width: 45%;
+        margin-bottom: 8%;
+
+        & h2 {
+            position: relative;
+            bottom: 12px;
+            font-size: 2rem;
+        }
+    }
+
+    & img{
+        width: 40%;
+        margin-bottom: 8%;
+        aspect-ratio: 1195 / 1151;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+
+section:nth-child(4){
+    height: 90vh;
+
+    & div:nth-child(1){
+        height: 15%;
+        position:relative;
+        top: 18px;
+
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    & div:nth-child(2){
+        height: 85%;
+        padding-top: 5%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: space-around;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+
+        & article {
+            width: 90%;
+            background-color: grey;
+        }
+
+        & img{
+            width: 100%;
+            aspect-ratio: 16 / 10;
+        }
+    }
+}
+
+
+.italic{
+    position: relative;
+    bottom: 12px;
+    font-style: italic;
+}
+
+
+@media (max-width: 500px){
+    html {
+        font-size: 12pt;
     }
 }
