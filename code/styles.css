@@ -22,6 +22,13 @@ html{
 
 section {
     height: 90vh;
+    overflow: hidden;
+}
+
+img {
+    aspect-ratio: 1189 / 1149;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 
@@ -35,7 +42,6 @@ section:nth-child(1) {
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: scroll;
 
     & > button{
         min-height: 2.5em;
@@ -63,21 +69,16 @@ section:nth-child(1) {
 
 section:nth-child(2){
     text-align: center;
-    background-image: linear-gradient(#f1f1eb, 90%, #e6ff6d);
+    background-image: linear-gradient(var(--primary-bg), 90%, var(--secondary-bg));
 
     & img{
         width: 45%;
         margin: 2.5% 20px;
-
-        aspect-ratio: 1189 / 1149;
-        object-fit: cover;
-
-        border-radius: 20px;
     }
 }
 
 section:nth-child(3){
-    background-image: linear-gradient(to top, #efefe7, 80%, #e6ff6d);
+    background-image: linear-gradient(to top, var(--primary-bg), 80%, var(--secondary-bg));
 
     & .wrapper{
         display: flex;
@@ -98,44 +99,61 @@ section:nth-child(3){
         & img{
             width: 40%;
             margin-top: 2.5%;
-            aspect-ratio: 1195 / 1151;
-            object-fit: cover;
-            border-radius: 20px;
         }
     }
 }
 
 section:nth-child(4){
-    height: 90vh;
+    background-image: linear-gradient(var(--primary-bg) 0px 2px, transparent 4px);
+    height: auto;
 
     & div:nth-child(1){
-        height: 15%;
-        position:relative;
-        top: 18px;
+        margin-top: 2.5%;
 
         font-size: 2rem;
         text-align: center;
+
+        & h2 + h2{
+            position: relative;
+            bottom: 28px;
+        }
     }
 
     & div:nth-child(2){
-        height: 85%;
-        padding-top: 5%;
+        margin-top: 2.5%;
 
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
         justify-items: center;
-        gap: 10px;
+        gap: 5px;
 
         & article {
-            width: 90%;
-            background-color: grey;
+            width: 85%;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        & .icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--secondary-bg);
+
         }
 
         & img{
             width: 100%;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 564 / 627;
         }
     }
 }
@@ -151,4 +169,6 @@ section:nth-child(4){
     html {
         font-size: 12pt;
     }
+
+
 }
