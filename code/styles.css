@@ -12,6 +12,16 @@
 
     --primary-text: #23270d;
     --font-size: 20pt;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
 }
 
 
@@ -21,7 +31,9 @@ html{
 }
 
 section {
-    height: 90vh;
+    height: auto;
+    padding: var(--space-7) 0;
+    
     overflow: hidden;
 }
 
@@ -42,6 +54,8 @@ section:nth-child(1) {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    height: 90vh;
 
     & > button{
         min-height: 2.5em;
@@ -70,46 +84,41 @@ section:nth-child(1) {
 section:nth-child(2){
     text-align: center;
     background-image: linear-gradient(var(--primary-bg), 90%, var(--secondary-bg));
+    padding-top: var(--space-9);
 
     & img{
         width: 45%;
-        margin: 2.5% 20px;
+        margin: 0 var(--space-5);
     }
 }
 
 section:nth-child(3){
     background-image: linear-gradient(to top, var(--primary-bg), 80%, var(--secondary-bg));
 
-    & .wrapper{
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 
-        & div{
-            width: 40%;
-            align-self: flex-end;
+    & div{
+        width: 40%;
+        align-self: flex-end;
 
-            & h2 {
-                position: relative;
-                bottom: 12px;
-                font-size: 2rem;
-            }
+        & h2 {
+            position: relative;
+            bottom: 12px;
+            font-size: 2rem;
         }
+    }
 
-        & img{
-            width: 40%;
-            margin-top: 2.5%;
-        }
+    & img {
+        width: 40%;
+        aspect-ratio: 1195 / 1151;
     }
 }
 
 section:nth-child(4){
     background-image: linear-gradient(var(--primary-bg) 0px 2px, transparent 4px);
-    height: auto;
 
     & div:nth-child(1){
-        margin-top: 2.5%;
-
         font-size: 2rem;
         text-align: center;
 
@@ -120,8 +129,6 @@ section:nth-child(4){
     }
 
     & div:nth-child(2){
-        margin-top: 2.5%;
-
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         justify-content: space-around;
@@ -158,6 +165,29 @@ section:nth-child(4){
     }
 }
 
+section:nth-child(5){
+
+    & .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & div{
+            width: 40%;
+            align-self: center;
+
+            & h2 {
+                position: relative;
+                bottom: 12px;
+                font-size: 2rem;
+            }
+        }
+
+        & img{
+            width: 40%;
+        }
+    }
+}
 
 .italic{
     font-family: Sans-serif;
