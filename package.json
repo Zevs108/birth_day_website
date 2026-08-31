@@ -4,7 +4,7 @@
   "description": "Website project for CSS and HTML practice",
   "main": "index.js",
   "scripts": {
-    "test": "npx http-server -c-1"
+    "test": "npx http-server ./ -c-1"
   },
   "repository": {
     "type": "git",
