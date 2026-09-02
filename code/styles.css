@@ -1,45 +1,11 @@
-/* CSS rule reset*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Variables */
-:root {
-    --primary-bg: #f4f4ef;
-    --secondary-bg: #e6ff6d;
-
-    --primary-text: #23270d;
-    --font-size: 18pt;
-
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 24px;
-    --space-6: 32px;
-    --space-7: 48px;
-    --space-8: 64px;
-    --space-9: 96px;
-
-    --bg-base: #f1f1eb;
-    --bg-lighter-1: #f4f4ef;
-    --bg-lighter-2: #f7f7f2;
-    --bg-lighter-3: #fafaf6;
-    --bg-lighter-4: #fdfdfb;
-}
-
-
 html{
     color: var(--primary-text, black);
-    font-size: var(--font-size, 16pt);
+    font-size: var(--font-size, 16px);
 }
 
 section {
     height: auto;
     padding: var(--space-8) 0;
-    overflow: hidden;
 }
 
 img {
@@ -48,8 +14,54 @@ img {
     border-radius: 20px;
 }
 
+/* common styling */
+.primary-button{
+    min-height: 2.5em;
+    max-width: 12em;
+    width: 100%;
+    margin-bottom: 2%;
 
-section:nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    background-color: var(--secondary-bg);
+    border-radius: 20px;
+}
+.title{
+    font-size: 9rem;
+    font-weight: 500;
+}
+.subtitle{
+    font-size: 3rem;
+    font-weight: 500;
+}
+.text{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Usually inherits font-size from .title or .subtitle */
+.emphasize {
+   font-family: var(--font-emphasis);
+   font-style: italic;
+}
+
+/* images */
+.large-format{
+    max-width: 700px;
+    min-width: 300px;
+    width: 45%;
+    aspect-ratio: 1 / 1;
+}
+.normal-format{
+    width: 45%;
+    min-width: 200px;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+}
+
+/* styling per section */
+.hero {
     background-image: url("../public/hero.png");
     background-size: cover;
     background-clip: border;
@@ -62,71 +74,38 @@ section:nth-child(1) {
 
     height: 90vh;
 
-    & > button{
-        min-height: 2.5em;
-        max-width: 12em;
-        width: 100%;
-        margin-bottom: 2%;
-
-        font-size: 1rem;
-        font-weight: 500;
-
-        background-color: var(--secondary-bg);
-        border-radius: 20px;
-    }
-
-    & h1{
-        font-size: 6rem;
-        font-weight: 500;
-    }
-
-    & p {
-        font-size: 1.2rem;
-    }
-
-    & h1 + h1{
-        position: relative;
-        bottom: 2.5rem;
+    & .emphasize {
+       margin-top: -50px;
     }
 }
 
-section:nth-child(2){
-    text-align: center;
+.showcase-pictures {
     background-image: linear-gradient(var(--primary-bg), 90%, var(--secondary-bg));
     padding-top: var(--space-9);
+    text-align: center;
 
-    & img{
-        width: 45%;
-        margin: 0 var(--space-5);
+    & img.large-format {
+        margin: 0 var(--space-6);
     }
 }
 
-section:nth-child(3){
+.first-content-split {
     background-image: linear-gradient(to top, var(--primary-bg), 80%, var(--secondary-bg));
 
     display: flex;
-    justify-content: space-around;
-
-    & div{
-        width: 40%;
-        align-self: flex-end;
-
-        & h2 {
-            font-size: 2rem;
-        }
-
-        & span {
-            position: relative;
-            bottom: 16px;
-        }
+    justify-content: center;
+    align-items: flex-end;
+    & .text-container{
+        width: 45%;
+        max-width: 600px;
+        margin: 0 var(--space-6);
     }
-
-    & img {
-        width: 40%;
+    & img.normal-format {
+        margin: 0 var(--space-6);
     }
 }
 
-section:nth-child(4){
+.second-content-split{
     background-image: linear-gradient(var(--primary-bg) 0px 2px, transparent 4px);
     background-color: var(--bg-lighter-3);
 
@@ -177,7 +156,7 @@ section:nth-child(4){
     }
 }
 
-section:nth-child(5){
+.third-content-split{
     background-color: var(--bg-lighter-2);
     display: flex;
     align-items: center;
@@ -202,7 +181,7 @@ section:nth-child(5){
     }
 }
 
-section:nth-child(6){
+.fourth-content-split{
     background-image: linear-gradient(var(--primary-bg), 90%, var(--secondary-bg));
     display: flex;
     align-items: center;
@@ -249,7 +228,7 @@ section:nth-child(6){
     }
 }
 
-section:nth-child(7){
+.fifth-content-split{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -306,16 +285,23 @@ section:nth-child(7){
     }
 }
 
-.italic{
-    font-family: Sans-serif;
-    font-style: italic;
+@media (max-width: 900px){
+
 }
-
-
 @media (max-width: 500px){
     html {
-        font-size: 12pt;
+        font-size: 10px;
     }
 
+    section{
+        padding: var(--space-4) 0;
+    }
 
+    .hero {
+        height: 80vh;
+    }
+
+    .showcase-pictures img.large-format{
+        margin: var(--space-5) 0;
+    }
 }
